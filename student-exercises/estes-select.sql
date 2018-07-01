@@ -8,3 +8,6 @@ select * from band where name like '%Stones';
 select * from individual where firstName like '__ck';
 select * from band where name like '% and %';
 select * from individual where firstName like '_im';
+
+select lastName, birthDate from individual where lastName like'B%' group by lastName;
+
