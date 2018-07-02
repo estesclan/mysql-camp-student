@@ -88,10 +88,10 @@ player.lastName
 from batting join player ON player.ID = batting.playerID;
 
 
-SELECT birthplaceCountry, COUNT(*)as 'playerCount'
+SELECT birthplaceCountry, COUNT(*)as playerCount
 FROM player
 GROUP BY birthplaceCountry
-ORDER BY birthplaceCountry;
+ORDER BY playerCount;  -- or COUNT(*) if alias is wrapped in string
 
 SELECT divisionName, COUNT(*)as 'teamCount'
 FROM team
