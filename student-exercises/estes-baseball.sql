@@ -113,6 +113,24 @@ INNER JOIN batting on team.ID = batting.teamID
 WHERE batting.battingAvg > 320
 ORDER BY batting.battingAvg;
 
+SELECT avg(atbats), divisionName
+FROM team INNER JOIN batting ON team.ID = batting.teamID
+GROUP BY divisionName;
+
+SELECT
+player.lastName,
+batting.runs,
+batting.atbats
+FROM player
+LEFT JOIN batting on player.ID = batting.playerID
+WHERE batting.runs > 70
+ORDER BY runs desc;
+
+
+
+
+
+
 
 
 
