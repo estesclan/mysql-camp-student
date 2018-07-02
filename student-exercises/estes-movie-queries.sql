@@ -73,6 +73,19 @@ from movie
 ORDER BY MovieAge desc;
 
 -- List movies, actors, and directors for movies that are between 10 and 20 years old.
+SELECT movie.title, concat_ws(" ", actor.firstName, actor.lastName)as ActorName, director.name as Director,
+year(now()) - movie.year as MovieAge
+FROM movie JOIN director
+ON director.ID = movie.directorID
+JOIN role
+ON role.movieID = movie.ID
+JOIN actor
+ON role.actorID = actor.ID
+WHERE year(now()) - movie.year BETWEEN 10 and 20
+ORDER BY MovieAge desc;
+
+
+
 
 
 
